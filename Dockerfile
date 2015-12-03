@@ -12,7 +12,7 @@ RUN bin/bash /configure.sh && rm /configure.sh
 
 ADD adds/supervisord.conf /etc/supervisord.conf
 
-EXPOSE 22
+EXPOSE 22 8080
 
 CMD ["/usr/local/bin/supervisord","-n"]
 

@@ -7,6 +7,8 @@ mv /authorized_keys /root/.ssh/.
 chmod 600 /root/.ssh/*
 chown -Rf root:root /root/.ssh
 
+echo GatewayPorts clientspecified >> /etc/ssh/sshd_config
+
 # configure sshd to block authentication via password
 sed -i.bak 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 rm /etc/ssh/sshd_config.bak

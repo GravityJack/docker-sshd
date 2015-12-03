@@ -1,0 +1,21 @@
+---
+  apiVersion: "v1"
+  kind: "ReplicationController"
+  metadata: 
+    name: "vucms-tunnel"
+    labels: 
+      name: "vucms-tunnel"
+  spec: 
+    replicas: 1
+    template: 
+      metadata: 
+        name: "vucms-tunnel"
+        labels: 
+          name: "vucms-tunnel"
+      spec: 
+        containers: 
+          - name: "vucms-tunnel"
+            image: "gcr.io/gravity-jack-internal/vucms-tunnel:latest"
+            ports: 
+              - containerPort: 8080
+              - containerPort: 22
